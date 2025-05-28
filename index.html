@@ -1,0 +1,58 @@
+import React, { useState } from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+
+const FakeNewsDetectionUI = () => {
+  const [newsText, setNewsText] = useState("");
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleAnalyze = async () => {
+    setLoading(true);
+    setResult(null);
+
+    // Simulated API call for fake news detection
+    setTimeout(() => {
+      const isFake = Math.random() > 0.5; // Simulated result
+      setResult(isFake ? "Fake News" : "Real News");
+      setLoading(false);
+    }, 2000);
+  };
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <Card className="w-full max-w-3xl p-6 shadow-lg">
+        <h1 className="text-2xl font-bold mb-4 text-center">Fake News Detection</h1>
+
+        <CardContent>
+          <Textarea
+            placeholder="Paste your news article or text here..."
+            className="w-full mb-4"
+            rows={6}
+            value={newsText}
+            onChange={(e) => setNewsText(e.target.value)}
+          />
+          <Button
+            onClick={handleAnalyze}
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold"
+            disabled={!newsText || loading}
+          >
+            {loading ? "Analyzing..." : "Analyze"}
+          </Button>
+
+          {result && (
+            <div className="mt-6 text-center">
+              <h2 className={`text-xl font-bold ${result === "Fake News" ? "text-red-500" : "text-green-500" }`}>
+                {result}
+              </h2>
+            </div>
+          )}
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
+export default FakeNewsDetectionUI;
