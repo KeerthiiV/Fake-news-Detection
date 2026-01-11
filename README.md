@@ -15,6 +15,6 @@ This project aims to identify fake news article using supervised machine learnin
 - Jupyter Notebook
 - HTML (basic frontend)
 
-<img width="957" height="434" alt="S" src="https://github.com/user-attachments/assets/caaf110e-de32-462d-a4f4-11e6eb962b3a" />
-<img width="960" height="445" alt="ss" src="https://github.com/user-attachments/assets/246af43c-f931-4498-9217-63b95ed2e152" />
 
+<img width="960" height="445" alt="ss" src="https://github.com/user-attachments/assets/246af43c-f931-4498-9217-63b95ed2e152" />
+<img width="957" height="434" alt="S" src="https://github.com/user-attachments/assets/caaf110e-de32-462d-a4f4-11e6eb962b3a" />
